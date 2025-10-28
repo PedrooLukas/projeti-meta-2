@@ -1,103 +1,136 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowRight, Ship, Anchor, Waves as WavesIcon, Shield } from "lucide-react";
+import { Waves } from "@/components/waves";
+import { PartnersSlider } from "@/components/partners-slider";
+import { CounterAnimation } from "@/components/counter-animation";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="flex flex-col min-h-screen">
+      {/* Hero Section */}
+      <section className="relative flex flex-col items-center justify-center min-h-screen px-4 py-16 pt-32 pb-24 overflow-hidden">
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="text-white space-y-6">
+              <h1 className="font-[family-name:var(--font-rajdhani)] text-[82px] font-semibold leading-[82px] tracking-normal">
+                Navega Afuá –{" "}
+                <br />
+                Viajar Ficou Mais{" "}
+                <span className="text-[#0ea5e9]">Fácil.</span>
+              </h1>
+              
+              <p className="font-[family-name:var(--font-nunito-sans)] text-[18px] font-normal leading-auto tracking-normal text-[#FFFFFF] opacity-60">
+                Navega Afuá é especializada na venda de passagens com praticidade, segurança e confiança. Nosso objetivo é facilitar o seu trajeto, oferecendo opções acessíveis e um atendimento que realmente entende suas necessidades.
+              </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Button size="lg" className="bg-[#0ea5e9] hover:bg-[#0284c7] text-white font-semibold px-8" asChild>
+                  <Link href="/passagens">
+                    Ver Passagens <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" className="border-2 border-white/50 text-white hover:text-white hover:bg-white/10 bg-transparent font-semibold px-8 rounded-xl transition-colors" asChild>
+                  <Link href="/sobre">Saiba Mais</Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Right Content - Image/Card Placeholder */}
+            <div className="relative hidden lg:block">
+              <div className="relative w-full h-[400px] bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl shadow-2xl border-4 border-[#0ea5e9]/30">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Ship className="h-32 w-32 text-gray-400" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <Waves />
+      </section>
+
+      {/* Partners Slider */}
+      <PartnersSlider />
+
+      {/* Features & Stats Section */}
+      <section className="py-20 px-4">
+        {/* Features */}
+        <div className="container mx-auto max-w-6xl mb-20">
+          <h2 className="text-3xl font-bold text-center mb-4 text-white font-[family-name:var(--font-rajdhani)]">Por que escolher Navega Afuá?</h2>
+          <p className="text-center text-white/70 mb-12 max-w-2xl mx-auto font-[family-name:var(--font-nunito-sans)]">
+            Oferecemos a melhor experiência em viagens marítimas com conforto, segurança e preços acessíveis
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Card className="hover:shadow-xl transition-all border-2 border-white/10 hover:border-[#0ea5e9] bg-white/5 backdrop-blur-sm">
+              <CardHeader>
+                <Anchor className="h-12 w-12 mb-2 text-[#0ea5e9]" />
+                <CardTitle className="text-white font-[family-name:var(--font-montserrat)]">Rotas Seguras</CardTitle>
+                <CardDescription className="text-white/70 font-[family-name:var(--font-nunito-sans)]">
+                  Navegação com capitães experientes e rotas certificadas para sua segurança
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="hover:shadow-xl transition-all border-2 border-white/10 hover:border-[#0ea5e9] bg-white/5 backdrop-blur-sm">
+              <CardHeader>
+                <WavesIcon className="h-12 w-12 mb-2 text-[#0ea5e9]" />
+                <CardTitle className="text-white font-[family-name:var(--font-montserrat)]">Conforto a Bordo</CardTitle>
+                <CardDescription className="text-white/70 font-[family-name:var(--font-nunito-sans)]">
+                  Cabines confortáveis, restaurantes e entretenimento durante toda a viagem
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="hover:shadow-xl transition-all border-2 border-white/10 hover:border-[#0ea5e9] bg-white/5 backdrop-blur-sm">
+              <CardHeader>
+                <Shield className="h-12 w-12 mb-2 text-[#0ea5e9]" />
+                <CardTitle className="text-white font-[family-name:var(--font-montserrat)]">Garantia Total</CardTitle>
+                <CardDescription className="text-white/70 font-[family-name:var(--font-nunito-sans)]">
+                  Cancelamento gratuito até 24h antes e seguro viagem incluso
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+
+        {/* Stats */}
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <CounterAnimation 
+                end={50} 
+                suffix="+" 
+                duration={2500}
+                className="text-5xl font-bold mb-2 text-white font-[family-name:var(--font-rajdhani)]"
+              />
+              <p className="text-white/70 font-[family-name:var(--font-nunito-sans)]">Rotas Disponíveis</p>
+            </div>
+            <div>
+              <CounterAnimation 
+                end={10} 
+                suffix="k+" 
+                duration={2500}
+                decimals={1}
+                className="text-5xl font-bold mb-2 text-white font-[family-name:var(--font-rajdhani)]"
+              />
+              <p className="text-white/70 font-[family-name:var(--font-nunito-sans)]">Passageiros Felizes</p>
+            </div>
+            <div>
+              <CounterAnimation 
+                end={15} 
+                duration={2500}
+                className="text-5xl font-bold mb-2 text-white font-[family-name:var(--font-rajdhani)]"
+              />
+              <p className="text-white/70 font-[family-name:var(--font-nunito-sans)]">Anos de Experiência</p>
+            </div>
+            <div>
+              <div className="text-5xl font-bold mb-2 text-white font-[family-name:var(--font-rajdhani)]">24/7</div>
+              <p className="text-white/70 font-[family-name:var(--font-nunito-sans)]">Suporte Online</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
   );
 }
