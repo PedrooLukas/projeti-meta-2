@@ -1,10 +1,9 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Ship, Anchor, Waves as WavesIcon, Shield } from "lucide-react";
-import { Waves } from "@/components/waves";
-import { PartnersSlider } from "@/components/partners-slider";
-import { CounterAnimation } from "@/components/counter-animation";
+import { Button, Card, CardDescription, CardHeader, CardTitle } from "@/shared/ui";
+import { ArrowRight, Anchor, Waves as WavesIcon, Shield } from "lucide-react";
+import { Waves, PartnersSlider } from "@/widgets/hero";
+import { CounterAnimation } from "@/features/counter";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -38,12 +37,17 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Content - Image/Card Placeholder */}
+            {/* Right Content - Ship Image */}
             <div className="relative hidden lg:block">
-              <div className="relative w-full h-[400px] bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl shadow-2xl border-4 border-[#0ea5e9]/30">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Ship className="h-32 w-32 text-gray-400" />
-                </div>
+              <div className="relative w-full h-[500px] flex items-center justify-center">
+                <Image 
+                  src="/barco-frente.png" 
+                  alt="Barco" 
+                  width={650} 
+                  height={500}
+                  className="w-full h-full object-contain drop-shadow-2xl scale-110"
+                  priority
+                />
               </div>
             </div>
           </div>

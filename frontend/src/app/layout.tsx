@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Rajdhani, Nunito_Sans, Montserrat } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
+import { Navbar } from "@/widgets/navbar";
+import { Footer } from "@/widgets/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +33,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Travel Ship - Viagens Marítimas",
+  title: "Navega Afuá",
   description: "Reserve passagens de navio, explore rotas marítimas e viaje com segurança e conforto pelos melhores destinos.",
 };
 

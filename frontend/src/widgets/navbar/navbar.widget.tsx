@@ -4,14 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, Ship, Search, Users, LucideIcon } from "lucide-react";
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/shared/ui";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
+} from "@/shared/ui";
 
 interface NavItem {
   name: string;
