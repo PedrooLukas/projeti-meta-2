@@ -1,11 +1,11 @@
 "use client";
 
-import { Button } from "@/shared/ui";
+import { Button } from "@/components/ui/Button";
 import { ArrowLeft, User, CreditCard, Calendar, Mail, Phone, AlertTriangle, FileText } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Suspense, useState } from "react";
-import { showToast } from "@/shared/ui/toast";
+import { showToast } from "@/components/ui/Toast";
 
 function CheckoutContent() {
   const searchParams = useSearchParams();
@@ -77,7 +77,7 @@ function CheckoutContent() {
     }, 0);
   };
 
-  const handlePassageiroChange = (index: number, field: string, value: any) => {
+  const handlePassageiroChange = (index: number, field: string, value: string) => {
     const novosPassageiros = [...passageiros];
     novosPassageiros[index] = {
       ...novosPassageiros[index],
@@ -134,7 +134,7 @@ function CheckoutContent() {
 
     // Ir para página de pagamento
     const valorTotal = calcularTotal();
-    router.push(`/passagens/pagamento?viagemId=${viagemId}&origem=${origem}&destino=${destino}&numPassageiros=${numPassageiros}&valorTotal=${valorTotal}`);
+    router.push(`/passagens/payment?viagemId=${viagemId}&origem=${origem}&destino=${destino}&numPassageiros=${numPassageiros}&valorTotal=${valorTotal}`);
   };
 
   return (
@@ -142,7 +142,7 @@ function CheckoutContent() {
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <Link href={`/passagens/reserva?viagemId=${viagemId}&origem=${origem}&destino=${destino}`}>
+          <Link href={`/passagens/booking?viagemId=${viagemId}&origem=${origem}&destino=${destino}`}>
             <Button variant="ghost" className="text-white hover:text-white/80 mb-4">
               <ArrowLeft className="mr-2 h-5 w-5" />
               Anterior

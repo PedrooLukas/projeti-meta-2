@@ -1,19 +1,20 @@
-import { Button, Card, CardDescription, CardHeader, CardTitle } from "@/shared/ui";
+import { Button } from "@/components/ui/Button";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/Card";
 import { ArrowRight, Anchor, Waves as WavesIcon, Shield } from "lucide-react";
-import { Waves, PartnersSlider } from "@/widgets/hero";
-import { CounterAnimation } from "@/features/counter";
+import { Waves } from "@/components/Waves";
+import { PartnersSlider } from "@/components/PartnersSlider";
+import { CounterAnimation } from "@/components/CounterAnimation";
+import Subscription from "@/components/Subscription";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main className="flex flex-col min-h-screen">
-      {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center min-h-screen px-4 py-16 pt-32 pb-24 overflow-hidden">
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="text-white space-y-6">
+            <div className="text-white space-y-6 lg:mt-32">
               <h1 className="font-[family-name:var(--font-rajdhani)] text-[82px] font-semibold leading-[82px] tracking-normal">
                 Navega Afuá –{" "}
                 <br />
@@ -37,17 +38,20 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Content - Ship Image */}
             <div className="relative hidden lg:block">
               <div className="relative w-full h-[500px] flex items-center justify-center">
-                <Image 
-                  src="/barco-frente.png" 
-                  alt="Barco" 
-                  width={650} 
-                  height={500}
-                  className="w-full h-full object-contain drop-shadow-2xl scale-110"
-                  priority
-                />
+                <div className="animate-gentle-rock">
+                  <div className="animate-float-boat">
+                    <Image 
+                      src="/barco-frente.png" 
+                      alt="Barco" 
+                      width={650} 
+                      height={500}
+                      className="w-full h-full object-contain drop-shadow-2xl"
+                      priority
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -55,12 +59,9 @@ export default function Home() {
         <Waves />
       </section>
 
-      {/* Partners Slider */}
       <PartnersSlider />
 
-      {/* Features & Stats Section */}
       <section className="py-20 px-4">
-        {/* Features */}
         <div className="container mx-auto max-w-6xl mb-20">
           <h2 className="text-3xl font-bold text-center mb-4 text-white font-[family-name:var(--font-rajdhani)]">Por que escolher Navega Afuá?</h2>
           <p className="text-center text-white/70 mb-12 max-w-2xl mx-auto font-[family-name:var(--font-nunito-sans)]">
@@ -97,7 +98,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Stats */}
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
@@ -135,6 +135,7 @@ export default function Home() {
         </div>
       </section>
 
+      <Subscription />
     </main>
   );
 }

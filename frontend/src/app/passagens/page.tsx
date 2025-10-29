@@ -1,10 +1,10 @@
 "use client";
 
-import { Button } from "@/shared/ui";
+import { Button } from "@/components/ui/Button";
 import { MapPin, Calendar, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { showToast } from "@/shared/ui/toast";
+import { showToast } from "@/components/ui/Toast";
 
 export default function PassagensPage() {
   const router = useRouter();
@@ -59,7 +59,7 @@ export default function PassagensPage() {
       data
     });
     
-    router.push(`/passagens/resultados?${params.toString()}`);
+    router.push(`/passagens/results?${params.toString()}`);
   };
 
   return (
